@@ -35,7 +35,10 @@ import { useMutation } from "convex/react"
 import { api } from "@/convex/_generated/api"
 import { useRouter } from "next/navigation"
 
-const voiceCategories = ['alloy', 'shimmer', 'nova', 'echo', 'fable', 'onyx'];
+// const voiceCategories = ['alloy', 'shimmer', 'nova', 'echo', 'fable', 'onyx'];
+//*/ ElevenLabs available voices
+const voiceCategories = ['Paige - Engaging Narrator'];
+
 
 const formSchema = z.object({
   podcastTitle: z.string().min(2),
@@ -120,7 +123,7 @@ const CreatePodcast = () => {
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-16 font-bold text-white-1">Title</FormLabel>
                   <FormControl>
-                    <Input className="input-class focus-visible:ring-offset-orange-1" placeholder="JSM Pro Podcast" {...field} />
+                    <Input className="input-class focus-visible:ring-offset-orange-1" placeholder="VoiceCast AI Podcast" {...field} />
                   </FormControl>
                   <FormMessage className="text-white-1" />
                 </FormItem>
@@ -143,13 +146,13 @@ const CreatePodcast = () => {
                     </SelectItem>
                   ))}
                 </SelectContent>
-                {voiceType && (
+                {/* {voiceType && (
                   <audio 
                     src={`/${voiceType}.mp3`}
                     autoPlay
                     className="hidden"
                   />
-                )}
+                )} */}
               </Select>
             </div>
 
